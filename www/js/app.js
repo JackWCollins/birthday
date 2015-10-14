@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('birthdays', ['ionic', 'birthdays.controllers', 'birthdays.services'])
+angular.module('birthdays', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -45,7 +45,7 @@ angular.module('birthdays', ['ionic', 'birthdays.controllers', 'birthdays.servic
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'DashboardCtrl'
       }
     }
   })
@@ -59,12 +59,12 @@ angular.module('birthdays', ['ionic', 'birthdays.controllers', 'birthdays.servic
         }
       }
     })
-    .state('tab.event-detail', {
-      url: '/events/:eventId',
+    .state('tab.birthday-detail', {
+      url: '/birthdays/:birthdayId',
       views: {
         'tab-events': {
-          templateUrl: 'templates/event-detail.html',
-          controller: 'EventDetailCtrl'
+          templateUrl: 'templates/birthday-detail.html',
+          controller: 'BirthdayDetailCtrl'
         }
       }
     })
@@ -74,7 +74,7 @@ angular.module('birthdays', ['ionic', 'birthdays.controllers', 'birthdays.servic
     views: {
       'tab-add': {
         templateUrl: 'templates/tab-add.html',
-        controller: 'AddEventCtrl'
+        controller: 'AddCtrl'
       }
     }
   })
